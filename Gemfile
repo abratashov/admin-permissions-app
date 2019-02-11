@@ -11,9 +11,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'haml-rails', '~> 1.0'
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
+gem 'devise'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
