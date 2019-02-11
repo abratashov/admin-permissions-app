@@ -10,4 +10,7 @@
   %body
     %p.notice= notice
     %p.alert= alert
+    %p
+      = link_to 'Projects', projects_path
+      = link_to 'Tasks', tasks_path
     = yield
