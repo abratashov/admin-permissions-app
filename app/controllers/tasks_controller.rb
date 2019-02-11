@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    authorize @task
   end
 
   def edit
@@ -52,6 +53,7 @@ class TasksController < ApplicationController
   private
     def set_task
       @task = Task.find(params[:id])
+      authorize @task
     end
 
     def task_params

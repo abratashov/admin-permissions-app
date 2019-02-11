@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    authorize @project
   end
 
   def edit
@@ -53,6 +54,7 @@ class ProjectsController < ApplicationController
 
     def set_project
       @project = Project.find(params[:id])
+      authorize @project
     end
 
     def project_params

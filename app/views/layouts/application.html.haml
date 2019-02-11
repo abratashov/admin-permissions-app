@@ -11,6 +11,8 @@
     %p.notice= notice
     %p.alert= alert
     %p
+      = render 'devise/menu/login_items'
+    %p
       = link_to 'Projects', projects_path
       = link_to 'Tasks', tasks_path
     = yield

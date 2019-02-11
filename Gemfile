@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'pundit'
+gem 'rolify'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
