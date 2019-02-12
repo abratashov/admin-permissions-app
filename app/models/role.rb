@@ -11,7 +11,7 @@ class Role < ApplicationRecord
 
   scopify
 
-  USER_ROLES = [:root, :admin].freeze
+  ROLES = {root: :root}.freeze
   RESOURCES = [ Project, Task ].freeze
   RESOURCE_ROLES = [:creator, :editor, :cleaner].freeze
 end

@@ -1,15 +1,17 @@
 class UpdatePermissionsService < ApplicationService
   def initialize(user, permissions)
     @user = user
-    @permissions = permissions
+    @permissions = permissions || {}
     @success = true
   end
 
   def call
-    Role::RESOURCES.each {|resource| process_resource(resource)}
+    @user.transaction do
+      Role::RESOURCES.each {|resource| process_resource(resource)}
+    end
   rescue StandardError => e
     @success  = false
-    @errors   = [e]
+    @errors   = @user.errors
   ensure
     @result   = @user
   end

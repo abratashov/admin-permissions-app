@@ -4,6 +4,7 @@
   %b Name:
   = @project.name
 
-= link_to 'Edit', edit_project_path(@project)
-\|
+- if current_user.has_cached_role?(:editor, Project)
+  = link_to 'Edit', edit_project_path(@project)
+  \|
 = link_to 'Back', projects_path

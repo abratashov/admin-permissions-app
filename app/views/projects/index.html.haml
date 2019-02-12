@@ -13,9 +13,11 @@
       %tr
         %td= project.name
         %td= link_to 'Show', project
-        %td= link_to 'Edit', edit_project_path(project)
-        %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+        - if current_user.has_cached_role?(:editor, Project)
+          %td= link_to 'Edit', edit_project_path(project)
+        - if current_user.has_cached_role?(:cleaner, Project)
+          %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'New Project', new_project_path
+- if current_user.has_cached_role?(:creator, Project)
+  = link_to 'New Project', new_project_path

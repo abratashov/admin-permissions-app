@@ -4,6 +4,7 @@
   %b Name:
   = @task.name
 
-= link_to 'Edit', edit_task_path(@task)
-\|
+- if current_user.has_cached_role?(:editor)
+  = link_to 'Edit', edit_task_path(@task)
+  \|
 = link_to 'Back', tasks_path
